@@ -15,7 +15,7 @@ public final class Utilss {
 
     public static <T> List<T> readFileLineByLine(String pathname, Function<String, T> convert) {
         List<T> contents = new ArrayList<>();
-        try (Scanner sc = new Scanner(new File(pathname))) {
+        try (Scanner sc = new Scanner(new File(getPath(pathname)))) {
             while (sc.hasNextLine()) {
                 contents.add(convert.apply(sc.nextLine()));
             }
@@ -23,6 +23,13 @@ public final class Utilss {
             e.printStackTrace();
         }
         return contents;
+    }
+
+    private static String getPath(String linuxPath) {
+        if(System.getProperty("os.name").contains("Windows")) {
+            return "advent-of-code" + linuxPath.replaceFirst(".", "");
+        }
+        return linuxPath;
     }
 
 }
