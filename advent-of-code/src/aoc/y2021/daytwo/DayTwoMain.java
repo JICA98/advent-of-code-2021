@@ -74,7 +74,7 @@ public class DayTwoMain {
     }
 
     public static void main(String... args) {
-        List<Input> inputs = Utilss.readFileLineByLine("./src/aoc/y2021/daytwo/input.txt", Input::usingLine);
+        List<Input> inputs = Utilss.readFileLineByLine("two", Input::usingLine);
         partOne(inputs);
         partTwo(inputs);
     }
