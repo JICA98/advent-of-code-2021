@@ -34,7 +34,7 @@ public class DayOneMain {
     }
 
     public static void main(String[] args) {
-        final var input = Utilss.readFileLineByLine("./src/aoc/y2021/dayone/input.txt", Integer::parseInt);
+        final var input = Utilss.readFileLineByLine("one", Integer::parseInt);
         System.out.println(partOne(input));
         System.out.println(partTwo(input));
     }
