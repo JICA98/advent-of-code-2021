@@ -29,8 +29,9 @@ public class DayThreeMain {
 
     private static void partOne(List<String> inputList) {
         Map<Integer, Pair> countMap = new TreeMap<>();
+        final int times = inputList.get(0).length();
         for (String input : inputList) {
-            for (int i = 0; i < 12; i++) {
+            for (int i = 0; i < times; i++) {
                 Pair pair = countMap.getOrDefault(i, new Pair(0, 0));
                 if (input.charAt(i) == '0') {
                     pair.zero += 1;
