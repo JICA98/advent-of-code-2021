@@ -23,7 +23,7 @@ public class DayThreeMain {
 
     public static void main(String... args) {
         List<String> input = Utilss.readFileLineByLine("three");
-        // partOne(input);
+        partOne(input);
         partTwo(input);
     }
 
@@ -53,8 +53,8 @@ public class DayThreeMain {
     private static void partTwo(List<String> input) {
         String oxyRating = getRating(input, true);
         String co2Rating = getRating(input, false);
-        System.out.println(oxyRating);
-        System.out.println(co2Rating);
+        // System.out.println(oxyRating);
+        // System.out.println(co2Rating);
         System.out.println(Integer.parseInt(oxyRating, 2)
                 * Integer.parseInt(co2Rating, 2));
     }
