@@ -13,9 +13,9 @@ public final class Utilss {
 
     }
 
-    public static <T> List<T> readFileLineByLine(String pathname, Function<String, T> convert) {
+    public static <T> List<T> readFileLineByLine(String day, Function<String, T> convert) {
         List<T> contents = new ArrayList<>();
-        try (Scanner sc = new Scanner(new File(getPath(pathname)))) {
+        try (Scanner sc = new Scanner(new File(getPath(day)))) {
             while (sc.hasNextLine()) {
                 contents.add(convert.apply(sc.nextLine()));
             }
@@ -25,11 +25,12 @@ public final class Utilss {
         return contents;
     }
 
-    private static String getPath(String linuxPath) {
-        if(System.getProperty("os.name").contains("Windows")) {
-            return "advent-of-code" + linuxPath.replaceFirst(".", "");
-        }
-        return linuxPath;
+    public static List<String> readFileLineByLine(String day) {
+        return readFileLineByLine(day, String::valueOf);
+    }
+
+    private static String getPath(String day) {
+        return String.format("advent-of-code/src/aoc/y2021/day%s/input.txt", day);
     }
 
 }
